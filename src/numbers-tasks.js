@@ -300,8 +300,16 @@ function getSumToN(n) {
  *   202 => 4  // (2+0+2)
  *   5   => 5  // 5
  */
-function getSumOfDigits(/* num */) {
-  throw new Error('Not implemented');
+function getSumOfDigits(num) {
+  let ost = num % 10;
+  let sum = ost;
+  let num2 = Math.trunc(num / 10);
+  while (num2 >= 1) {
+    ost = num2 % 10;
+    sum += ost;
+    num2 = Math.trunc(num2 / 10);
+  }
+  return sum;
 }
 
 /**
@@ -315,8 +323,8 @@ function getSumOfDigits(/* num */) {
  *   16  => true
  *   15  => false
  */
-function isPowerOfTwo(/* num */) {
-  throw new Error('Not implemented');
+function isPowerOfTwo(num) {
+  return Math.log2(num) === Math.trunc(Math.log2(num));
 }
 
 /**
@@ -329,8 +337,8 @@ function isPowerOfTwo(/* num */) {
  *   0 => 0
  *   Math.PI / 2 => 1
  */
-function getSine(/* num */) {
-  throw new Error('Not implemented');
+function getSine(num) {
+  return Math.sin(num);
 }
 
 /**
@@ -344,8 +352,9 @@ function getSine(/* num */) {
  * 255, 16 => 'ff'
  * 2, 2    => '10'
  */
-function numberToStringInBase(/* number, base */) {
-  throw new Error('Not implemented');
+function numberToStringInBase(number, base) {
+  const k = Number(number);
+  return k.toString(base);
 }
 
 /**
